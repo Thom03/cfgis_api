@@ -6,7 +6,7 @@ from django.conf import settings
 
 class User(AbstractUser):
     """Abstracting User model"""
-    username = models.CharField(blank=True, null=True)
+    username = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(_('email address'), unique=True)
 
     USERNAME_FIELD = 'email'
