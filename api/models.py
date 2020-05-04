@@ -18,7 +18,8 @@ class User(AbstractUser):
 
 class UserProfile(models.Model):
     """UserProfile holding extra user fields"""
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     title = models.CharField(max_length=5)
     company = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
@@ -26,3 +27,17 @@ class UserProfile(models.Model):
     city = models.CharField(max_length=50)
     photo = models.ImageField(upload_to='uploads', blank=True)
 
+
+class Project(models.Model):
+    """Project models"""
+    user = models.ManyToManyField(
+        User,  related_name='projects')
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+
+
+class MapLayers(models.Model):
+    project = models.ForeignKey(to=Project, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    url = models.URLField(max_length=255)
+    description = models.TextField()
