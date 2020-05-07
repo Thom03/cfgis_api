@@ -114,3 +114,7 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+# Production configuration files #
+.env.prod.db
+.env.prod

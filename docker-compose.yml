@@ -3,11 +3,11 @@ version: '3.7'
 services: 
     web:
         build: ../cfgis_api
-        command: python manage.py runserver 0.0.0.0:9600
+        command: python manage.py runserver 0.0.0.0:9800
         volumes: 
             - ../cfgis_api/:/usr/src/app/
         ports: 
-            - 9600:9600
+            - 9800:9800
         env_file: 
             - ./.env.dev
         depends_on:
@@ -17,8 +17,8 @@ services:
         volumes: 
             - postgres_data:/var/lib/postgresql/data/
         environment: 
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=postgres
-            - POSTGRES_DB=postgres
+            - POSTGRES_USER=hello_django
+            - POSTGRES_PASSWORD=hello_django
+            - POSTGRES_DB=hello_django_dev
 volumes:
     postgres_data:                   

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import User, UserProfile
+from api.models import User, UserProfile, Project, MapLayers
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -45,3 +45,19 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             profile.save()
 
             return instance
+
+
+class ProjectSerializer(serializers.ModelSerializer):
+    """Serialization of Project Model"""
+
+    class Meta:
+        model = Project
+        fields = ('user', 'name', 'description',)
+
+
+class MapLayerSerializer(serializers.ModelSerializer):
+    """Serialization of Maplayer Model"""
+
+    class Meta:
+        model = MapLayers
+        fields = ('project', 'name', 'url', 'description')

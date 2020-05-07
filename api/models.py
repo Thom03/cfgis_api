@@ -34,6 +34,9 @@ class Project(models.Model):
         User,  related_name='projects')
     name = models.CharField(max_length=255)
     description = models.TextField()
+    
+    def __str__(self):
+        return "{}".format(self.name)
 
 
 class MapLayers(models.Model):
@@ -41,3 +44,7 @@ class MapLayers(models.Model):
     name = models.CharField(max_length=255)
     url = models.URLField(max_length=255)
     description = models.TextField()
+    
+    
+    def __str__(self):
+        return "{}".format(self.name)
