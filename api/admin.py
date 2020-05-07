@@ -33,18 +33,17 @@ class UserAdmin(BaseUserAdmin):
     inlines = (UserProfileInline,)
 
 
-
-
-class ProjectAdmin(admin.ModelAdmin):   
+class ProjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
     search_fields = ('user', 'name', 'description')
-    
- 
+
+
 admin.site.register(Project, ProjectAdmin)
 
 
-class MapLayersAdmin(admin.ModelAdmin):   
+class MapLayersAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
-    search_fields = ('user', 'name', 'description')    
- 
+    search_fields = ('user', 'name', 'description')
+
+
 admin.site.register(MapLayers, MapLayersAdmin)
