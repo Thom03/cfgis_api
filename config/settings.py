@@ -103,7 +103,6 @@ DATABASES = {
 # }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -146,10 +145,10 @@ AUTH_USER_MODEL = 'api.User'
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES':(
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
-    'DEFAULT_AUTHENTICATED_CLASSES':(
+    'DEFAULT_AUTHENTICATED_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
