@@ -53,6 +53,7 @@ class MapLayerViewset(viewsets.ModelViewSet):
     serializer_class = MapLayerSerializer
 
     """Applying permissions to this Viewset."""
+
     def get_permissions(self):
         permission_classes = []
         if self.action == 'create':
