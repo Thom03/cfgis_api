@@ -10,5 +10,5 @@ router.register(r'maplayers', MapLayerViewset)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^auth/', include('rest_auth.urls')),
+    # url(r'^auth/', include('rest_auth.urls')),
 ]
